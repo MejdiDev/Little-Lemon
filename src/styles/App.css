@@ -1,13 +1,32 @@
+:root {
+    --h-padding: 250px;
+}
+
 header {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
-    width: calc(100% - 600px);
+    width: calc(100% - calc(var(--h-padding) * 2));
+    padding: 15px 0;
 }
 
 header img {
-    height: 70px;
+    height: 50px;
+}
+
+a {
+    font-weight: 600;
+    color: #333;
+    transition: color 200ms;
+}
+
+footer a {
+    font-weight: 500;
+}
+
+a:hover {
+    color: #f4ce14;
 }
 
 nav ul {
@@ -15,4 +34,357 @@ nav ul {
     display: flex;
     flex-flow: row nowrap;
     gap: 20px;
+}
+
+main {
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+#call-to-action {
+    width: calc(100% - calc(var(--h-padding) * 2));
+    padding: 20px var(--h-padding);
+    background: #495e57;
+    position: relative;
+    margin-bottom: 10%;
+    height: 230px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center
+}
+
+#call-to-action #text {
+    width: 40%;
+}
+
+#call-to-action #text h1 {
+    font-family: 'Merriweather';
+    font-weight: 700;
+    font-size: 35px;
+    margin: 0;
+    color: #f4ce14;
+}
+
+#call-to-action #text h3 {
+    margin: 0;
+    font-family: 'Merriweather';
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 21px;
+}
+
+#call-to-action #text p {
+    margin: 0;
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+button:not(#specials article button) {
+    color: #000;
+    background: #f4ce14;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 300ms;
+}
+
+button:not(#specials article button):hover {
+    background: #bda113;
+}
+
+#call-to-action #image {
+    width: 300px;
+    height: 125%;
+    border-radius: 20px;
+    position: absolute;
+    right: var(--h-padding);
+    top: 15%;
+
+    background-image: url('../assets/hero.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#specials {
+    width: calc(100% - calc(var(--h-padding) * 2));
+    padding: 0 var(--h-padding);
+}
+
+#specials #top {
+    width: 100%;
+    display: flex;
+    flex-flow:  row nowrap;
+    justify-content: space-between;
+}
+
+#specials #top h1 {
+    font-family: 'Merriweather';
+    margin: 0;
+}
+
+#specials #items {
+    margin-top: 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    gap: 30px;
+}
+
+#specials #items article {
+    width: calc(100% - 30px);
+    padding: 0 15px;
+    background: #edefee;
+    overflow: hidden;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+#specials #items article p {
+    color: #495e57;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+#specials #items article h2:first-of-type {
+    font-size: 20px;
+    font-family: 'Merriweather';
+}
+
+#specials #items article h2:nth-of-type(2) {
+    font-size: 20px;
+    color: #EE9972;
+}
+
+#specials #items article #image {
+    width: calc(100% + 30px);
+    height: 150px;
+    margin-left: -15px;
+    margin-right: -15px;
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#specials article button {
+    margin-bottom: 30px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid #495e57;
+    transition: background 300ms, color 300ms;
+}
+
+#specials article button:hover {
+    background: #495e57;
+    color: #fff;
+}
+
+#specials article button:hover p {
+    color: #fff !important;
+}
+
+#specials article button:hover svg {
+    color: #fff !important;
+}
+
+#specials article button div {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+#specials article button div svg {
+    color: #495e57;
+    transition: color 300ms;
+    font-size: 24px;
+}
+
+#specials article button div p {
+    transition: color 300ms;
+    margin: 0 !important;
+    font-weight: 600;
+}
+
+#customers-say {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    background: #d9d9d9;
+    padding-bottom: 50px;
+
+    margin-bottom: 50px;
+}
+
+#customers-say h1 {
+    font-size: 30px;
+    font-family: 'Merriweather';
+}
+
+#customers-say #items {
+    width: calc(100% - calc(var(--h-padding) * 2));
+    padding: 0 var(--h-padding);
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#customers-say #items article {
+    padding: 20px 20px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+#customers-say #items article #stars {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#customers-say #items article #stars svg {
+    font-size: 16px;
+    width: 16px;
+    color: #f4ce14;
+}
+
+#customers-say #items article #person {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 15px;
+}
+
+#customers-say #items article #person #image {
+    width: 60px;
+    height: 60px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#chicago {
+    width: calc(100% - calc(var(--h-padding) * 2));
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+#chicago #text {
+    width: calc(100% - 500px);
+}
+
+#chicago #text h1 {
+    font-family: 'Merriweather';
+    font-size: 45px;
+    color: #f4ce14;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+#chicago #text h2 {
+    margin: 0;
+    color: #495e57;
+    font-family: 'Merriweather';
+}
+
+#chicago #text p {
+    font-size: 20px;
+    color: #495e57;
+}
+
+#chicago #images {
+    position: relative;
+}
+
+#chicago #images .image {
+    width: 250px;
+    height: 350px;
+    border-radius: 10px;
+
+    background-image: url('https://shahandfahad.github.io//Little-Lemon/static/media/MarioandAdrianA.7f44c6d6e341a27d14b3.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#chicago #images .image:last-of-type {
+    position: absolute;
+    background-image: url('https://shahandfahad.github.io//Little-Lemon/static/media/restaurantChefB.4b4c2d26b514db32e8fc.jpg');
+    top: 30%;
+    right: 70%;
+}
+
+footer {
+    width: calc(100% - calc(var(--h-padding) * 2));
+    padding: 40px var(--h-padding);
+    background: #edefee;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+footer #image {
+    width: 250px;
+    height: 350px;
+    border-radius: 10px;
+
+    background-image: url('https://shahandfahad.github.io/Little-Lemon/static/media/restaurant.324d0f99bdf19400a0f7.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+footer .list h3 {
+    margin-left: 0;
+    margin-bottom: 15px;
+    color: #495e57;
+    font-family: 'Merriweather';
+    font-weight: 700;
+    font-size: 23px;
+}
+
+footer .list ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer .list ul li {
+    font-size: 20px;
+    margin-bottom: 7px;
+    color: #333;
+    font-weight: 500;
+}
+
+#booking-form {
+    height: 600px;
+    width: 100%;
+
+    display: grid;
+    max-width: 200px;
+    gap: 20px
 }
