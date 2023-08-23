@@ -8,7 +8,8 @@ header {
     align-items: center;
     justify-content: space-between;
     width: calc(100% - calc(var(--h-padding) * 2));
-    padding: 15px 0;
+    padding: 15px var(--h-padding);
+    background: #edefee;
 }
 
 header img {
@@ -34,6 +35,41 @@ nav ul {
     display: flex;
     flex-flow: row nowrap;
     gap: 20px;
+}
+
+nav ul #image {
+    display: none;
+    margin-bottom: 15px;
+}
+
+#overlay {
+    display: none;
+    top: -15px;
+    right: 0;
+    position: absolute;
+    z-index: 999;
+    width: 100vw;
+    height: calc(100vh + 15px);
+    background: #000;
+    opacity: 0;
+}
+
+#mobile-menu {
+    display: none !important;
+    cursor: pointer;
+
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mobile-menu svg {
+    font-size: 25px;
 }
 
 main {
@@ -86,7 +122,7 @@ main {
     font-size: 18px;
 }
 
-button:not(#specials article button) {
+button:not(#specials article button), input[type="submit"] {
     color: #000;
     background: #f4ce14;
     padding: 10px 25px;
@@ -98,7 +134,7 @@ button:not(#specials article button) {
     transition: background 300ms;
 }
 
-button:not(#specials article button):hover {
+button:not(#specials article button):hover, input[type="submit"]:hover {
     background: #bda113;
 }
 
@@ -289,7 +325,7 @@ button:not(#specials article button):hover {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    margin-bottom: 100px;
+    margin-bottom: 155px;
 }
 
 #chicago #text {
@@ -345,6 +381,7 @@ footer {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    gap: 20px;
 }
 
 footer #image {
@@ -380,11 +417,328 @@ footer .list ul li {
     font-weight: 500;
 }
 
-#booking-form {
+#booking-page {
     height: 600px;
     width: 100%;
+}
 
-    display: grid;
-    max-width: 200px;
-    gap: 20px
+#form-wrapper {
+    height: 100%;
+    width: calc(100% - 50px);
+    padding: 50px 0;
+
+    padding-right: 50px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+#form-wrapper form {
+    width: 50%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+#form-wrapper #visuals {
+    width: 50%;
+    height: 100%;
+    background: #495e57;
+    padding: 50px 0;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+#form-wrapper #visuals #image {
+    width: 60%;
+    height: 80%;
+    border-radius: 15px;
+
+    background-image: url('https://shahandfahad.github.io//Little-Lemon/static/media/MarioandAdrianA.7f44c6d6e341a27d14b3.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#form-wrapper #visuals h1 {
+    width: 60%;
+    font-family: 'Merriweather';
+    color: #f4ce14;
+    font-size: 30px;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+#form-wrapper #visuals h3 {
+    width: 60%;
+    color: #fff;
+    font-weight: 500;
+    font-size: 19px;
+}
+
+#form-wrapper form label {
+    width: 60%;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+#form-wrapper form input, #form-wrapper form .select-wrapper {
+    border-radius: 10px;
+    width: 60%;
+    outline:  none !important;
+    border: solid 1px #333;
+    background: #fff;
+    height: 50px;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+#form-wrapper form select {
+    height: 100%;
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    border-radius: 10px;
+    border: none;
+    outline:  none !important;
+    font-size: 17px;
+}
+
+#form-wrapper form input {
+    width: calc(60% - 30px);
+    padding: 0 15px;
+    font-size: 17px;
+}
+
+#form-wrapper form input[type="submit"] {
+    width: calc(60% + 5px);
+    border: none;
+    justify-content: center;
+    font-family: 'Merriweather';
+    background: #f4ce14;
+}
+
+#form-wrapper form input[type="submit"]:hover {
+    background: #bda113;
+}
+
+#form-wrapper #form-success {
+    display: none;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#form-wrapper #form-success img {
+    width: 50%;
+}
+
+#form-wrapper #form-success h1 {
+    color: #008000;
+    font-family: 'Merriweather';
+    font-weight: 700;
+    font-size: 40px;
+}
+
+@media only screen and (max-width: 1230px) {
+    :root {
+        --h-padding: 100px;
+    }
+
+    #specials {
+        margin-top: 6%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    #chicago {
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+
+    #chicago #text {
+        width: 100%;
+        text-align: center;
+    }
+
+    #chicago #text h1 {
+        margin-top: 0 !important;
+    }
+
+    #chicago #images {
+        margin-top: 40px;
+        margin-left: 162.5px;
+    }
+}
+
+@media only screen and (max-width: 920px) {
+    :root {
+        --h-padding: 40px;
+    }
+
+    #booking-page {
+        height: auto !important;
+    }
+
+    #booking-page #form-wrapper {
+        padding-top: 0 !important;
+        width: 100%;
+        padding-right: 0 !important;
+        flex-flow: column nowrap !important;
+    }
+
+    #booking-page #form-wrapper #visuals {
+        width: 100% !important;
+        margin-right: 0 !important;
+        text-align: center !important;
+    }
+
+    #booking-page #form-wrapper #visuals h1, #booking-page #form-wrapper #visuals h3 {
+        width: 90%;
+    }
+
+    #booking-page #form-wrapper #visuals #image {
+        width: 90%;
+        height: 300px;
+    }
+
+    #booking-page #form-wrapper form {
+        width: 100% !important;
+    }
+
+    #form-wrapper form label {
+        width: 90%;
+    }
+
+    #form-wrapper form .select-wrapper {
+        width: 90%;
+    }
+    
+    #form-wrapper form input {
+        width: calc(90% - 30px);
+    }
+    
+    #form-wrapper form input[type="submit"] {
+        width: calc(90% + 5px);
+    }
+}
+
+@media only screen and (max-width: 830px) {
+    #specials #items {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #specials #items article {
+        width: 280px !important;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    :root {
+        --h-padding: 30px;
+    }
+
+    #overlay.seen {
+        display: block;
+    }
+
+    nav ul {
+        padding-top: 50px;
+        display: none;
+        position: absolute;
+        right: calc(-40px - 60vw);
+        top: -15px;
+        height: calc(100vh - 50px);
+        width: 60vw;
+        z-index: 999;
+        background: #fff;
+        transition: right 400ms;
+
+        flex-flow: column nowrap;
+    }
+
+    nav ul.seen {
+        display: flex !important;
+    }
+
+    nav ul.active {
+        right: 0 !important;
+    }
+
+    nav ul #image {
+        display: block;
+    }
+
+    nav ul li {
+        font-size: 20px;
+    }
+
+    #mobile-menu {
+        display: flex !important;
+    }
+
+    #call-to-action {
+        flex-flow: column nowrap !important;
+        text-align: center !important;
+    }
+
+    #call-to-action #text {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    #call-to-action #image {
+        display: none !important;
+    }
+
+    #specials #top {
+        align-items: center !important;
+    }
+
+    #specials h1 {
+        font-size: 21px !important;
+    }
+
+    #specials #items article {
+        width: 100% !important;
+    }
+
+    #customers-say {
+        width: 100% !important;
+    }
+
+    #customers-say #items {
+        flex-flow: column nowrap !important;
+    }
+
+    footer {
+        flex-wrap: wrap;
+    }
+
+    footer #image {
+        width: 100%;
+        height: 100px;
+    }
+
+    footer .list {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    footer .list h3 {
+        font-size: 20px !important;
+    }
+
+    footer .list li {
+        font-size: 18px !important;
+    }
 }

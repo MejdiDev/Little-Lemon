@@ -30,7 +30,11 @@ body {
   font-family: 'Karla'
 }
 
-button {
+body.hidden {
+  overflow: hidden;
+}
+
+button, input {
   font-family: 'Karla'
 }
 
